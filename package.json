@@ -1,0 +1,35 @@
+{
+  "name": "i18n",
+  "version": "1.0.0",
+  "description": "My sensational Nuxt.js project",
+  "author": "Willin Wang",
+  "private": true,
+  "scripts": {
+    "dev": "npm run build && npm run dev:server",
+    "dev:server": "nuxt",
+    "build": "node build.js",
+    "generate": "NODE_ENV=production nuxt generate",
+    "deploy": "npm run build && npm run generate",
+    "lint": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "nuxt": "^2.14.3",
+    "nuxt-i18n": "^6.13.9"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^3.0.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.3.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-shiwangme": "^1.0.3",
+    "eslint-import-resolver-webpack": "^0.12.2",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "js-yaml": "^3.14.0",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  }
+}
