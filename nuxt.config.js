@@ -44,14 +44,14 @@ export default {
   modules: ['nuxt-i18n'],
   i18n: {
     locales: [
-      { name: '简体中文', code: 'zh', iso: 'zh-CN', file: 'zh.json' },
-      { name: 'English', code: 'en', iso: 'en-US', file: 'en.json' }
+      { name: '简体中文', code: 'zh', iso: 'zh-CN', file: 'zh.yaml' },
+      { name: 'English', code: 'en', iso: 'en-US', file: 'en.yaml' }
     ],
     strategy: 'prefix',
     rootRedirect: 'zh',
     defaultLocale: 'zh',
     lazy: true,
-    langDir: 'assets/i18n/',
+    langDir: 'i18n/',
     seo: true,
     detectBrowserLanguage: {
       useCookie: true,
@@ -67,6 +67,12 @@ export default {
   build: {
     extractCSS: true,
     extend(config, { isDev }) {
+      // yaml loader rules
+      config.module.rules.push({
+        test: /\.ya?ml$/,
+        type: 'json', // Required by Webpack v4
+        use: 'yaml-loader'
+      });
       if (isDev) {
         // eslint-disable-next-line no-param-reassign
         config.devtool = '#source-map';

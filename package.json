@@ -30,6 +30,7 @@
     "husky": "^4.2.5",
     "js-yaml": "^3.14.0",
     "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "yaml-loader": "^0.6.0"
   }
 }
